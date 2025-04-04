@@ -119,6 +119,7 @@ def print_man(count_mistakes):
 
 open_chars = []
 count_mistakes = 0
+used_chars = []
 
 def print_word(open_chars, word):
     print('Слово: ', end='')
@@ -140,12 +141,13 @@ if __name__ == '__main__':
     while count_mistakes < 9 and is_end_game(open_chars, random_word) == False:
         print_man(count_mistakes)
         print_word(open_chars, random_word)
-
+        print('Использованные буквы:',used_chars)
         char = input('Введите букву:')
         while ((str_is_valid(char) == False) or (open_chars.__contains__(char))):
             print('Введен некорректный символ')
             char = input('Введите букву:')
         clear()
+        used_chars.append(char)
         if char_contains_in_word(char, random_word):
             open_chars.append(char)
             print('Вы угадали букву!')
@@ -156,3 +158,4 @@ if __name__ == '__main__':
         print('Поздравляем, вы победили!')
     else:
         print('Вы проиграли ;(')
+    print('Загаданное слово: ',random_word)

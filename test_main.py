@@ -15,3 +15,9 @@ def test_str_is_valid():
 def test_load_words():
     assert main.load_words('words.txt') != None
     assert main.load_words('words.txt') != []
+
+def test_get_random_word():
+    words = main.load_words('words.txt')
+    random_word = main.get_random_word(words)
+    assert random_word != None
+    assert words.__contains__(random_word) == True

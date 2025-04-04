@@ -11,3 +11,7 @@ def test_str_is_valid():
     assert main.str_is_valid('2') == False
     assert main.str_is_valid('') == False
     assert main.str_is_valid('%') == False
+
+def test_load_words():
+    assert main.load_words('words.txt') != None
+    assert main.load_words('words.txt') != []

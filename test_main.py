@@ -21,3 +21,7 @@ def test_get_random_word():
     random_word = main.get_random_word(words)
     assert random_word != None
     assert words.__contains__(random_word) == True
+
+def test_char_contains_in_word():
+    assert main.char_contains_in_word('я', 'австрия') == True
+    assert main.char_contains_in_word('ю', 'собака') == False

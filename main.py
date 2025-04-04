@@ -19,6 +19,11 @@ def get_random_word(words):
 
 random_word = get_random_word(words)
 
+def char_contains_in_word(chars, word):
+    if word.__contains__(chars):
+        return True
+    return False
+
 if __name__ == '__main__':
     print('Игра Виселица началась!')
     print('Введите букву:')
